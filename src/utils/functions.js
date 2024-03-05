@@ -37,8 +37,8 @@ const createSuccessListeners = () => {
   socket.on();
 
   // socket should listen for leave-game-success (depends on what you wrote)
-  socket.on("end-round", (newRoundNumber) => {
-    console.log(newRoundNumber);
+  socket.on("end-round", ({ roundNumber }) => {
+    console.log(roundNumber);
   });
 
   // socket should listen for end-game-success (depends on what you wrote)
