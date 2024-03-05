@@ -5,7 +5,9 @@ import { socket } from "./socketClient";
 
 // the functions that have "on" are the ones that will emit messages
 // socket should emit join-room
-const onJoinRoom = () => {};
+const onJoinRoom = () => {
+  socket.emit("joinRoom", { roomId: "12", playerName: "Laksh" });
+};
 
 // socket should emit join-room
 const onStartGame = () => {};
@@ -33,6 +35,11 @@ const createSuccessListeners = () => {
 
   // socket should listen for leave-game-success (depends on what you wrote)
   socket.on();
+
+  // socket should listen for leave-game-success (depends on what you wrote)
+  socket.on("end-round", (newRoundNumber) => {
+    console.log(newRoundNumber);
+  });
 
   // socket should listen for end-game-success (depends on what you wrote)
   socket.on();
