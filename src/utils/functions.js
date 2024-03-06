@@ -5,12 +5,18 @@ import { socket } from "./socketClient";
 
 // the functions that have "on" are the ones that will emit messages
 // socket should emit join-room
-const onJoinRoom = () => {
-  socket.emit("joinRoom", { roomId: "12", playerName: "Laksh" });
+const onJoinRoom = (roomId, playerName) => {
+  socket.emit("joinRoom", { roomId: roomId, playerName: playerName });
 };
 
 // socket should emit join-room
-const onStartGame = () => {};
+const onStartGame = (numRounds, roomId, players) => {
+  socket.emit("startGame", {
+    numRounds: numRounds,
+    roomId: roomId,
+    players: players,
+  });
+};
 
 // socket should emit join-room
 const onNextTurn = () => {};
@@ -25,10 +31,19 @@ const onEndGame = () => {};
 // i.e, these are all the socket.on functions
 const createSuccessListeners = () => {
   // socket should listen for join-room-success (depends on what you wrote)
-  socket.on();
+  socket.on("joinRoomSuccess", ({ players }) => {
+    console.log(players);
+  });
 
   // socket should listen for start-game-success (depends on what you wrote)
-  socket.on();
+  socket.on(
+    "startGameSuccess",
+    ({ prompt, currentPlayerTurn, roundNumber }) => {
+      console.log(prompt);
+      console.log(currentPlayerTurn);
+      console.log(roundNumber);
+    }
+  );
 
   // socket should listen for next-turn-success (depends on what you wrote)
   socket.on();
