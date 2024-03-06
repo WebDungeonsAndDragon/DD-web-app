@@ -13,13 +13,17 @@ const onJoinRoom = () => {
 const onStartGame = () => {};
 
 // socket should emit join-room
-const onNextTurn = () => {};
+const onNextTurn = (currentPlayerAction, roomId) => {
+  socket.emit("next-turn", ({currentPlayerAction: currentPlayerAction, roomId: roomId}));
+};
 
 // socket should emit join-room
 const onLeaveGame = () => {};
 
 // socket should emit join-room
-const onEndGame = () => {};
+const onEndGame = (endGameReason, roomId) => {
+  socket.emit("end-game", ({endGameReason: endGameReason, roomId: roomId}));
+};
 
 // this function is just to let the app know that these are the set of messages it should be listening for
 // i.e, these are all the socket.on functions
@@ -31,7 +35,10 @@ const createSuccessListeners = () => {
   socket.on();
 
   // socket should listen for next-turn-success (depends on what you wrote)
-  socket.on();
+  socket.on("next-turn-success", ({currentPlayerTurn, prompt}) => {
+    console.log(currentPlayerTurn);
+    console.log(prompt);
+  });
 
   // socket should listen for leave-game-success (depends on what you wrote)
   socket.on();
@@ -42,7 +49,9 @@ const createSuccessListeners = () => {
   });
 
   // socket should listen for end-game-success (depends on what you wrote)
-  socket.on();
+  socket.on("end-game-success", (prompt) => {
+    console.log(prompt);
+  });
 };
 
 export {
