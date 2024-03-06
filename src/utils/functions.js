@@ -24,7 +24,9 @@ const onNextTurn = (currentPlayerAction, roomId) => {
 };
 
 // socket should emit join-room
-const onLeaveGame = () => {};
+const onLeaveGame = (playerId, roomId) => {
+  socket.emit("leaveGame", { playerThatLeft: playerId, roomId: roomId });
+};
 
 // socket should emit join-room
 const onEndGame = (endGameReason, roomId) => {
