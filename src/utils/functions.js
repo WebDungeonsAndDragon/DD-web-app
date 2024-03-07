@@ -10,17 +10,20 @@ const onJoinRoom = (roomId, playerName) => {
 };
 
 // socket should emit join-room
-const onStartGame = (numRounds, roomId, players) => {
+const onStartGame = (numRounds, roomId, roles) => {
   socket.emit("startGame", {
     numRounds: numRounds,
     roomId: roomId,
-    players: players,
+    roles: roles,
   });
 };
 
 // socket should emit join-room
 const onNextTurn = (currentPlayerAction, roomId) => {
-  socket.emit("next-turn", ({currentPlayerAction: currentPlayerAction, roomId: roomId}));
+  socket.emit("next-turn", {
+    currentPlayerAction: currentPlayerAction,
+    roomId: roomId,
+  });
 };
 
 // socket should emit join-room
@@ -30,7 +33,7 @@ const onLeaveGame = (playerId, roomId) => {
 
 // socket should emit join-room
 const onEndGame = (endGameReason, roomId) => {
-  socket.emit("end-game", ({endGameReason: endGameReason, roomId: roomId}));
+  socket.emit("end-game", { endGameReason: endGameReason, roomId: roomId });
 };
 
 // this function is just to let the app know that these are the set of messages it should be listening for
@@ -42,28 +45,28 @@ const createSuccessListeners = () => {
   });
 
   // socket should listen for start-game-success (depends on what you wrote)
-  socket.on(
-    "startGameSuccess",
-    ({ prompt, currentPlayerTurn, roundNumber }) => {
-      console.log(prompt);
-      console.log(currentPlayerTurn);
-      console.log(roundNumber);
-    }
-  );
+  // socket.on(
+  //   "startGameSuccess",
+  //   ({ prompt, currentPlayerTurn, roundNumber }) => {
+  //     console.log(prompt);
+  //     console.log(currentPlayerTurn);
+  //     console.log(roundNumber);
+  //   }
+  // );
 
   // socket should listen for next-turn-success (depends on what you wrote)
-  socket.on("next-turn-success", ({currentPlayerTurn, prompt}) => {
-    console.log(currentPlayerTurn);
-    console.log(prompt);
-  });
+  // socket.on("next-turn-success", ({ currentPlayerTurn, prompt }) => {
+  //   console.log(currentPlayerTurn);
+  //   console.log(prompt);
+  // });
 
   // socket should listen for leave-game-success (depends on what you wrote)
   socket.on();
 
   // socket should listen for leave-game-success (depends on what you wrote)
-  socket.on("end-round", ({ roundNumber }) => {
-    console.log(roundNumber);
-  });
+  // socket.on("end-round", ({ roundNumber }) => {
+  //   console.log(roundNumber);
+  // });
 
   // socket should listen for end-game-success (depends on what you wrote)
   socket.on("end-game-success", (prompt) => {
