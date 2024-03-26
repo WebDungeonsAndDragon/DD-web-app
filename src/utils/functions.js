@@ -69,9 +69,9 @@ const createSuccessListeners = () => {
   // });
 
   // socket should listen for end-game-success (depends on what you wrote)
-  socket.on("end-game-success", (prompt) => {
-    console.log(prompt);
-  });
+  // socket.on("end-game-success", ({ endGame, prompt }) => {
+  //   console.log(endGame, prompt);
+  // });
 };
 
 export {

@@ -47,11 +47,16 @@ function App() {
     socket.on(
       "end-round-success",
       ({ currentPlayerTurn, introduction, prompt, options }) => {
-        setPrompt(`${introduction} \n ${prompt}`);
+        setPrompt(` ${prompt}`);
         setIsPlayerTurn(currentPlayerTurn === socket.id);
         setOptions(options);
       }
     );
+
+    socket.on("end-game-success", ({ endGame, story }) => {
+      setPrompt(`You ${endGame}! \n ${story}`);
+      setIsPlayerTurn(false);
+    });
 
     return () => {
       socket.disconnect();
