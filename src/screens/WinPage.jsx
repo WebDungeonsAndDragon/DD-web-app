@@ -10,3 +10,5 @@ function WinPage() {
     </div>
   );
 }
+
+export default WinPage;
