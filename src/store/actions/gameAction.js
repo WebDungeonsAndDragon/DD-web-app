@@ -9,6 +9,7 @@ export const exampleFunction = (example) => {
     });
   };
 };
+
 export const startGame = (roomId) => {
   return (dispatch) => {
     dispatch({
