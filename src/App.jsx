@@ -108,7 +108,7 @@ function App() {
               colorScheme="blue"
               onClick={() => onNextTurn(option, roomId)}
             >
-              {option}
+              {option.split("|")[0]}
             </Button>
           ))}
         </VStack>
