@@ -1,0 +1,301 @@
+.playActiveChild {
+    position: absolute;
+    top: 78.5px;
+    left: 755.5px;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 1px;
+    height: 911px;
+  }
+  .loremIpsumDolor {
+    margin: 0;
+  }
+  .loremIpsumDolorContainer {
+    position: absolute;
+    top: 138px;
+    left: 109px;
+    display: inline-block;
+    width: 524px;
+  }
+  .settings,
+  .topChild {
+    position: absolute;
+    top: 1px;
+    left: 31px;
+    background-color: var(--color-gainsboro);
+    width: 71px;
+    height: 79px;
+  }
+  .topChild {
+    top: 0;
+    left: 0;
+    width: 1104px;
+  }
+  .turn {
+    font-weight: 500;
+  }
+  .yourTurnTxtContainer {
+    width: 100%;
+  }
+  .div,
+  .yourTurn {
+    position: absolute;
+    top: 7px;
+    left: 142.6px;
+    display: flex;
+    align-items: center;
+    width: 231.9px;
+  }
+  .div {
+    left: 841.3px;
+    justify-content: center;
+    width: 81.1px;
+  }
+  .top,
+  .topItem {
+    position: absolute;
+    top: 11px;
+    left: 761.3px;
+    width: 58.5px;
+    height: 61px;
+  }
+  .top {
+    top: 0;
+    left: 204px;
+    width: 1104px;
+    height: 79px;
+    text-align: center;
+    font-size: var(--font-size-29xl);
+  }
+  .playActiveItem,
+  .statsTabChild {
+    position: absolute;
+    background-color: var(--color-gainsboro);
+  }
+  .playActiveItem {
+    top: 666px;
+    left: 756px;
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 756px;
+    height: 316px;
+  }
+  .statsTabChild {
+    top: 0;
+    left: 0;
+    width: 151px;
+    height: 55px;
+  }
+  .stats,
+  .statsTab {
+    position: absolute;
+    top: 6px;
+    left: 37px;
+  }
+  .statsTab {
+    top: 611px;
+    left: 782px;
+    width: 151px;
+    height: 55px;
+  }
+  .cleric,
+  .detailsTabChild,
+  .shreya {
+    position: absolute;
+    top: 681px;
+    left: 797px;
+  }
+  .cleric,
+  .detailsTabChild {
+    left: 1001px;
+  }
+  .detailsTabChild {
+    top: 0;
+    left: 0;
+    background-color: var(--color-darkgray);
+    width: 151px;
+    height: 55px;
+  }
+  .details {
+    position: absolute;
+    top: 6px;
+    left: 21px;
+    display: inline-block;
+    width: 109px;
+  }
+  .detailsTab,
+  .detailsTabItem {
+    position: absolute;
+    height: 55px;
+  }
+  .detailsTab {
+    top: 611px;
+    left: 959px;
+    width: 151px;
+    text-align: center;
+  }
+  .detailsTabItem {
+    top: 0;
+    left: 0;
+    background-color: var(--color-darkgray);
+    width: 208px;
+  }
+  .roomInfo {
+    position: absolute;
+    top: 6px;
+    left: 28.9px;
+    display: inline-block;
+    width: 150.1px;
+  }
+  .detailsTab1 {
+    position: absolute;
+    top: 611px;
+    left: 1131px;
+    width: 208px;
+    height: 55px;
+    text-align: center;
+  }
+  .div1,
+  .health {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .div1 {
+    top: 11px;
+    left: 569px;
+    font-size: var(--font-size-5xl);
+    text-align: right;
+  }
+  .healthBarChild,
+  .healthBarItem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-darkgray);
+    width: 632px;
+    height: 13px;
+  }
+  .healthBarItem {
+    background-color: var(--color-dimgray);
+    width: 432px;
+  }
+  .healthBar,
+  .healthStat {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 632px;
+    height: 13px;
+  }
+  .healthStat {
+    top: 745px;
+    left: 797px;
+    height: 57px;
+  }
+  .rectangleDiv {
+    top: 0;
+    left: 0;
+    background-color: var(--color-dimgray);
+    width: 592px;
+    height: 13px;
+  }
+  .charStat,
+  .div3,
+  .rectangleDiv {
+    position: absolute;
+  }
+  .charStat {
+    top: 825px;
+    left: 797px;
+    width: 632px;
+    height: 57px;
+  }
+  .div3 {
+    top: 11px;
+    left: 566px;
+    font-size: var(--font-size-5xl);
+    text-align: right;
+  }
+  .healthBarChild2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-dimgray);
+    width: 368px;
+    height: 13px;
+  }
+  .intelStat {
+    position: absolute;
+    top: 902px;
+    left: 797px;
+    width: 632px;
+    height: 57px;
+  }
+  .playActiveInner {
+    top: 100px;
+    left: 816px;
+    background-color: var(--color-gainsboro);
+  }
+  .playActiveChild1,
+  .playActiveChild2,
+  .playActiveInner {
+    position: absolute;
+    width: 287px;
+    height: 201px;
+  }
+  .playActiveChild1 {
+    top: 380px;
+    left: 817px;
+    background-color: var(--color-gainsboro);
+  }
+  .playActiveChild2 {
+    top: 100px;
+    left: 1142px;
+  }
+  .playActiveChild2,
+  .playActiveChild3,
+  .scrollChild {
+    background-color: var(--color-gainsboro);
+  }
+  .playActiveChild3 {
+    position: absolute;
+    top: 380px;
+    left: 1143px;
+    width: 287px;
+    height: 201px;
+  }
+  .scrollChild {
+    top: 0;
+    left: 0;
+    height: 802px;
+  }
+  .scroll,
+  .scrollChild,
+  .scrollItem {
+    position: absolute;
+    width: 20px;
+  }
+  .scrollItem {
+    top: 247px;
+    left: 0;
+    background-color: var(--color-dimgray);
+    height: 76px;
+  }
+  .scroll {
+    top: 100px;
+    left: 715px;
+    height: 802px;
+  }
+  .playActive {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 982px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-13xl);
+    color: var(--color-black);
+    font-family: var(--font-alegreya-sc);
+  }
+  
