@@ -5,8 +5,8 @@ function WinPage() {
       <h1>You Won</h1>
       <text>Hip Hip Hooray</text>
 
-      <button onClick={LandingPage}>Home</button>
-      <button onClick={MainPage}>Lobby</button>
+      <button onClick={LandingPageNope}>Home</button>
+      <button onClick={MainPageNope}>Lobby</button>
     </div>
   );
 }
