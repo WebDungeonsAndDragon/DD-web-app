@@ -9,3 +9,5 @@ function RulesPage() {
     </div>
   );
 }
+
+export default RulesPage;

@@ -10,3 +10,5 @@ function LosePage() {
     </div>
   );
 }
+
+export default LosePage;

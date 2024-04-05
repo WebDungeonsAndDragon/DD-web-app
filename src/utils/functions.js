@@ -45,33 +45,33 @@ const createSuccessListeners = () => {
   });
 
   // socket should listen for start-game-success (depends on what you wrote)
-  // socket.on(
-  //   "startGameSuccess",
-  //   ({ prompt, currentPlayerTurn, roundNumber }) => {
-  //     console.log(prompt);
-  //     console.log(currentPlayerTurn);
-  //     console.log(roundNumber);
-  //   }
-  // );
+  socket.on(
+    "startGameSuccess",
+    ({ prompt, currentPlayerTurn, roundNumber }) => {
+      console.log(prompt);
+      console.log(currentPlayerTurn);
+      console.log(roundNumber);
+    }
+  );
 
   // socket should listen for next-turn-success (depends on what you wrote)
-  // socket.on("next-turn-success", ({ currentPlayerTurn, prompt }) => {
-  //   console.log(currentPlayerTurn);
-  //   console.log(prompt);
-  // });
+  socket.on("next-turn-success", ({ currentPlayerTurn, prompt }) => {
+    console.log(currentPlayerTurn);
+    console.log(prompt);
+  });
 
   // socket should listen for leave-game-success (depends on what you wrote)
   socket.on();
 
   // socket should listen for leave-game-success (depends on what you wrote)
-  // socket.on("end-round", ({ roundNumber }) => {
-  //   console.log(roundNumber);
-  // });
+  socket.on("end-round", ({ roundNumber }) => {
+    console.log(roundNumber);
+  });
 
   // socket should listen for end-game-success (depends on what you wrote)
-  // socket.on("end-game-success", ({ endGame, prompt }) => {
-  //   console.log(endGame, prompt);
-  // });
+  socket.on("end-game-success", ({ endGame, prompt }) => {
+    console.log(endGame, prompt);
+  });
 };
 
 export {
