@@ -13,3 +13,5 @@ TODO:
 */
 
 function LandingPage() {}
+
+export default LandingPage;

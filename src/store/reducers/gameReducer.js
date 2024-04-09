@@ -1,5 +1,12 @@
 const initial_state = {
-  currentPlayer: "",
+  currentPlayer: 0,
+  roomId: "",
+  playersInGame: [],
+  story: [],
+  isLoading: false,
+  options: [],
+  finalPrompt: "",
+  hasWon: false,
 };
 
 const gameReducer = (state = initial_state, action) => {
