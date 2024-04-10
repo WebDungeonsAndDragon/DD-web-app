@@ -1,10 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, HStack, VStack, StackDivider } from "@chakra-ui/react";
 
 import backgroundImage from "../MainPageComponents/images/nature-paper-texture.png";
 import styles from "../MainPageComponents/PlayACTIVE.module.css";
+import { socket } from "../utils/socketClient";
+import { createSuccessListeners } from "../utils/functions";
 
-const MainPage = ({ options, name }) => {
+const MainPage = () => {
+  const [isPlayersTurn, setIsPlayerTurn] = useState(false);
+  const [prompt, setPrompt] = useState("");
+  const [options, setOptions] = useState(["", "", "", ""]);
+  const [roomId, setRoomId] = useState("12");
+
+  useEffect(() => {
+    socket.connect();
+    createSuccessListeners();
+    socket.on(
+      "startGameSuccess",
+      ({ introduction, prompt, currentPlayerTurn, roundNumber, options }) => {
+        setPrompt(`${introduction} \n ${prompt}`);
+        setIsPlayerTurn(currentPlayerTurn === socket.id);
+        setOptions(options);
+        console.log(roundNumber);
+      }
+    );
+
+    socket.on("next-turn-success", ({ currentPlayerTurn, prompt }) => {
+      setIsPlayerTurn(currentPlayerTurn === socket.id);
+      setPrompt(prompt[0]);
+      setOptions([prompt[1], prompt[2], prompt[3], prompt[4]]);
+    });
+
+    window.addEventListener("unload", () => {
+      socket.emit("removePlayer", { roomId: roomId });
+    });
+
+    socket.on(
+      "end-round-success",
+      ({ currentPlayerTurn, introduction, prompt, options }) => {
+        setPrompt(` ${prompt}`);
+        setIsPlayerTurn(currentPlayerTurn === socket.id);
+        setOptions(options);
+      }
+    );
+
+    socket.on("end-game-success", ({ endGame, story }) => {
+      setPrompt(`You ${endGame}! \n ${story}`);
+      setIsPlayerTurn(false);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
   return (
     <Box
       backgroundImage={`url(${backgroundImage})`}
@@ -33,13 +82,7 @@ const MainPage = ({ options, name }) => {
               className={styles.blankLine}
             >{`Lorem ipsum dolor sit amet consectetur. Pharetra vestibulum laoreet facilisis non fermentum semper imperdiet amet malesuada. Cursus potenti vulputate eget egestas rutrum vitae. `}</p>
             <p className={styles.blankLine}>&nbsp;</p>
-            <p className={styles.blankLine}>
-              Maecenas ut phasellus pulvinar id dui non dapibus hac cras. Non
-              praesent turpis amet eget libero. Nunc pellentesque feugiat at
-              nibh nunc nisi. Placerat sem quisque sit senectus in scelerisque
-              facilisi. Quisque sit diam orci fames at fringilla platea. Feugiat
-              sit purus massa habitant suspendisse mauris.
-            </p>
+            <p className={styles.blankLine}>{options[1]}</p>
             <p className={styles.blankLine}>&nbsp;</p>
             <p className={styles.blankLine}>What will you do?</p>
           </div>
