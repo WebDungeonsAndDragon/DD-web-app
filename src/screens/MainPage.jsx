@@ -80,11 +80,10 @@ const MainPage = () => {
           <div className={styles.loremIpsumDolorContainer}>
             <p
               className={styles.blankLine}
-            >{`Lorem ipsum dolor sit amet consectetur. Pharetra vestibulum laoreet facilisis non fermentum semper imperdiet amet malesuada. Cursus potenti vulputate eget egestas rutrum vitae. `}</p>
+            >{prompt}</p>
             <p className={styles.blankLine}>&nbsp;</p>
             <p className={styles.blankLine}>{options[1]}</p>
             <p className={styles.blankLine}>&nbsp;</p>
-            <p className={styles.blankLine}>What will you do?</p>
           </div>
           <div className={styles.choices}>
             <div className={styles.choice1}>
@@ -94,10 +93,7 @@ const MainPage = () => {
                 src="/src/MainPageComponents/images/nature-paper-texture.png"
               />
               <b className={styles.loremIpsumDolor}>
-                Lorem ipsum dolor sit amet consectetur. Vulputate urna fusce
-                pellentesque aliquet et arcu pretium dignissim consectetur.
-                Tristique nunc suscipit donec tempus quam. Amet felis sit elit
-                nibh morbi quis et.
+                {options[0]}
               </b>
             </div>
             <div className={styles.choice2}>
@@ -107,10 +103,7 @@ const MainPage = () => {
                 src="/src/MainPageComponents/images/nature-paper-texture.png"
               />
               <b className={styles.loremIpsumDolor}>
-                Lorem ipsum dolor sit amet consectetur. Vulputate urna fusce
-                pellentesque aliquet et arcu pretium dignissim consectetur.
-                Tristique nunc suscipit donec tempus quam. Amet felis sit elit
-                nibh morbi quis et.
+                {options[1]}
               </b>
             </div>
             <div className={styles.choice3}>
@@ -120,10 +113,7 @@ const MainPage = () => {
                 src="/src/MainPageComponents/images/nature-paper-texture.png"
               />
               <b className={styles.loremIpsumDolor}>
-                Lorem ipsum dolor sit amet consectetur. Vulputate urna fusce
-                pellentesque aliquet et arcu pretium dignissim consectetur.
-                Tristique nunc suscipit donec tempus quam. Amet felis sit elit
-                nibh morbi quis et.
+                {options[2]}
               </b>
             </div>
             <div className={styles.choice4}>
@@ -133,10 +123,7 @@ const MainPage = () => {
                 src="/src/MainPageComponents/images/nature-paper-texture.png"
               />
               <b className={styles.loremIpsumDolor}>
-                Lorem ipsum dolor sit amet consectetur. Vulputate urna fusce
-                pellentesque aliquet et arcu pretium dignissim consectetur.
-                Tristique nunc suscipit donec tempus quam. Amet felis sit elit
-                nibh morbi quis et.
+                {options[3]}
               </b>
             </div>
           </div>
