@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Box, HStack, VStack, StackDivider } from "@chakra-ui/react";
+import { Box, HStack, VStack, StackDivider, Button } from "@chakra-ui/react";
 
 import backgroundImage from "../MainPageComponents/images/nature-paper-texture.png";
 import styles from "../MainPageComponents/PlayACTIVE.module.css";
 import { socket } from "../utils/socketClient";
-import { createSuccessListeners } from "../utils/functions";
+import { createSuccessListeners, onNextTurn } from "../utils/functions";
 
 const MainPage = () => {
-  const [isPlayersTurn, setIsPlayerTurn] = useState(false);
+  const [isPlayerTurn, setIsPlayerTurn] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [options, setOptions] = useState(["", "", "", ""]);
   const [roomId, setRoomId] = useState("12");
@@ -78,55 +78,53 @@ const MainPage = () => {
 
         <HStack>
           <div className={styles.loremIpsumDolorContainer}>
-            <p
-              className={styles.blankLine}
-            >{prompt}</p>
-            <p className={styles.blankLine}>&nbsp;</p>
-            <p className={styles.blankLine}>{options[1]}</p>
+            <p className={styles.blankLine}>{prompt}</p>
             <p className={styles.blankLine}>&nbsp;</p>
           </div>
-          <div className={styles.choices}>
-            <div className={styles.choice1}>
-              <img
-                className={styles.naturePaperTexture1}
-                alt=""
-                src="/src/MainPageComponents/images/nature-paper-texture.png"
-              />
-              <b className={styles.loremIpsumDolor}>
-                {options[0]}
-              </b>
+          {isPlayerTurn && (
+            <div className={styles.choices}>
+              <div className={styles.choice1}>
+                <img
+                  className={styles.naturePaperTexture1}
+                  alt=""
+                  src="/src/MainPageComponents/images/nature-paper-texture.png"
+                />
+                <Button bg="transparent" className={styles.loremIpsumDolor}>
+                  {options[0]}
+                </Button>
+              </div>
+              <div className={styles.choice2}>
+                <img
+                  className={styles.naturePaperTexture1}
+                  alt=""
+                  src="/src/MainPageComponents/images/nature-paper-texture.png"
+                />
+                <Button bg="transparent" className={styles.loremIpsumDolor}>
+                  {options[1]}
+                </Button>
+              </div>
+              <div className={styles.choice3}>
+                <img
+                  className={styles.naturePaperTexture1}
+                  alt=""
+                  src="/src/MainPageComponents/images/nature-paper-texture.png"
+                />
+                <Button bg="transparent" className={styles.loremIpsumDolor}>
+                  {options[2]}
+                </Button>
+              </div>
+              <div className={styles.choice4}>
+                <img
+                  className={styles.naturePaperTexture1}
+                  alt=""
+                  src="/src/MainPageComponents/images/nature-paper-texture.png"
+                />
+                <Button bg="transparent" className={styles.loremIpsumDolor}>
+                  {options[3]}
+                </Button>
+              </div>
             </div>
-            <div className={styles.choice2}>
-              <img
-                className={styles.naturePaperTexture1}
-                alt=""
-                src="/src/MainPageComponents/images/nature-paper-texture.png"
-              />
-              <b className={styles.loremIpsumDolor}>
-                {options[1]}
-              </b>
-            </div>
-            <div className={styles.choice3}>
-              <img
-                className={styles.naturePaperTexture1}
-                alt=""
-                src="/src/MainPageComponents/images/nature-paper-texture.png"
-              />
-              <b className={styles.loremIpsumDolor}>
-                {options[2]}
-              </b>
-            </div>
-            <div className={styles.choice4}>
-              <img
-                className={styles.naturePaperTexture1}
-                alt=""
-                src="/src/MainPageComponents/images/nature-paper-texture.png"
-              />
-              <b className={styles.loremIpsumDolor}>
-                {options[3]}
-              </b>
-            </div>
-          </div>
+          )}
         </HStack>
       </VStack>
     </Box>
