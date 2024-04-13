@@ -324,8 +324,8 @@
   position: absolute;
   height: 84.58%;
   width: 88.77%;
-  top: 7.96%;
-  left: 5.26%;
+  /* top: 7.96%;
+  left: 5.26%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,6 +340,8 @@
   left: 0;
   width: 285px;
   height: 201px;
+  align-content: center;
+  justify-content: center;
 }
 .choice2,
 .choice3,

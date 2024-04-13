@@ -7,7 +7,7 @@ import { socket } from "../utils/socketClient";
 import { createSuccessListeners, onNextTurn } from "../utils/functions";
 
 const MainPage = () => {
-  const [isPlayerTurn, setIsPlayerTurn] = useState(false);
+  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
   const [prompt, setPrompt] = useState("");
   const [options, setOptions] = useState(["", "", "", ""]);
   const [roomId, setRoomId] = useState("12");
@@ -81,50 +81,73 @@ const MainPage = () => {
             <p className={styles.blankLine}>{prompt}</p>
             <p className={styles.blankLine}>&nbsp;</p>
           </div>
-          {isPlayerTurn && (
-            <div className={styles.choices}>
-              <div className={styles.choice1}>
-                <img
-                  className={styles.naturePaperTexture1}
-                  alt=""
-                  src="/src/MainPageComponents/images/nature-paper-texture.png"
-                />
-                <Button bg="transparent" className={styles.loremIpsumDolor}>
-                  {options[0]}
-                </Button>
+          <div className={styles.choices}>
+            {isPlayerTurn && (
+              <div>
+                <div className={styles.choice1}>
+                  <img
+                    className={styles.naturePaperTexture1}
+                    alt=""
+                    src="/src/MainPageComponents/images/nature-paper-texture.png"
+                  />
+                  <Button
+                    bg="transparent"
+                    className={styles.loremIpsumDolor}
+                    width="100%"
+                    height="100%"
+                  >
+                    {options[0]}
+                  </Button>
+                </div>
+                <div className={styles.choice2}>
+                  <img
+                    className={styles.naturePaperTexture1}
+                    alt=""
+                    src="/src/MainPageComponents/images/nature-paper-texture.png"
+                  />
+                  <Button
+                    bg="transparent"
+                    className={styles.loremIpsumDolor}
+                    width="100%"
+                    height="100%"
+                  >
+                    {options[1]}
+                  </Button>
+                </div>
+                <div className={styles.choice3}>
+                  <img
+                    className={styles.naturePaperTexture1}
+                    alt=""
+                    src="/src/MainPageComponents/images/nature-paper-texture.png"
+                  />
+                  <Button
+                    bg="transparent"
+                    className={styles.loremIpsumDolor}
+                    width="100%"
+                    height="100%"
+                  >
+                    {options[2]}
+                  </Button>
+                </div>
+                <div className={styles.choice4}>
+                  <img
+                    className={styles.naturePaperTexture1}
+                    alt=""
+                    src="/src/MainPageComponents/images/nature-paper-texture.png"
+                  />
+                  <Button
+                    bg="transparent"
+                    className={styles.loremIpsumDolor}
+                    width="100%"
+                    height="100%"
+                  >
+                    {options[3]}
+                  </Button>
+                </div>
               </div>
-              <div className={styles.choice2}>
-                <img
-                  className={styles.naturePaperTexture1}
-                  alt=""
-                  src="/src/MainPageComponents/images/nature-paper-texture.png"
-                />
-                <Button bg="transparent" className={styles.loremIpsumDolor}>
-                  {options[1]}
-                </Button>
-              </div>
-              <div className={styles.choice3}>
-                <img
-                  className={styles.naturePaperTexture1}
-                  alt=""
-                  src="/src/MainPageComponents/images/nature-paper-texture.png"
-                />
-                <Button bg="transparent" className={styles.loremIpsumDolor}>
-                  {options[2]}
-                </Button>
-              </div>
-              <div className={styles.choice4}>
-                <img
-                  className={styles.naturePaperTexture1}
-                  alt=""
-                  src="/src/MainPageComponents/images/nature-paper-texture.png"
-                />
-                <Button bg="transparent" className={styles.loremIpsumDolor}>
-                  {options[3]}
-                </Button>
-              </div>
-            </div>
-          )}
+            )}
+            {!isPlayerTurn && <Box>Waiting for someone's turn...</Box>}
+          </div>
         </HStack>
       </VStack>
     </Box>
