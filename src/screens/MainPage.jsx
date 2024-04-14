@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, HStack, VStack, StackDivider, Button } from "@chakra-ui/react";
+import { Box, HStack, VStack, SimpleGrid, Button } from "@chakra-ui/react";
 
 import backgroundImage from "../MainPageComponents/images/nature-paper-texture.png";
 import styles from "../MainPageComponents/PlayACTIVE.module.css";
@@ -7,9 +7,9 @@ import { socket } from "../utils/socketClient";
 import { createSuccessListeners, onNextTurn } from "../utils/functions";
 
 const MainPage = () => {
-  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
+  const [playerTurn, setCurrentPlayerTurn] = useState(null);
   const [prompt, setPrompt] = useState("");
-  const [options, setOptions] = useState(["", "", "", ""]);
+  const [options, setOptions] = useState(["Hello", "", "", ""]);
   const [roomId, setRoomId] = useState("12");
 
   useEffect(() => {
@@ -19,14 +19,14 @@ const MainPage = () => {
       "startGameSuccess",
       ({ introduction, prompt, currentPlayerTurn, roundNumber, options }) => {
         setPrompt(`${introduction} \n ${prompt}`);
-        setIsPlayerTurn(currentPlayerTurn === socket.id);
+        setCurrentPlayerTurn(currentPlayerTurn);
         setOptions(options);
         console.log(roundNumber);
       }
     );
 
     socket.on("next-turn-success", ({ currentPlayerTurn, prompt }) => {
-      setIsPlayerTurn(currentPlayerTurn === socket.id);
+      setCurrentPlayerTurn(currentPlayerTurn);
       setPrompt(prompt[0]);
       setOptions([prompt[1], prompt[2], prompt[3], prompt[4]]);
     });
@@ -39,14 +39,14 @@ const MainPage = () => {
       "end-round-success",
       ({ currentPlayerTurn, introduction, prompt, options }) => {
         setPrompt(` ${prompt}`);
-        setIsPlayerTurn(currentPlayerTurn === socket.id);
+        setCurrentPlayerTurn(currentPlayerTurn);
         setOptions(options);
       }
     );
 
     socket.on("end-game-success", ({ endGame, story }) => {
       setPrompt(`You ${endGame}! \n ${story}`);
-      setIsPlayerTurn(false);
+      setCurrentPlayerTurn(null);
     });
 
     return () => {
@@ -69,9 +69,11 @@ const MainPage = () => {
         <div className={styles.top}>
           <div className={styles.yourTurn}>
             <span className={styles.yourTurnTxtContainer}>
-              <b>Your</b>
+              <span className={styles.title} style={{ fontWeight: 550 }}>
+                {playerTurn === socket.id ? "Your" : playerTurn?.name + "'s"}
+              </span>
               <span className={styles.span}>{` `}</span>
-              <span>Turn</span>
+              <span className={styles.title}>Turn</span>
             </span>
           </div>
         </div>
@@ -82,71 +84,31 @@ const MainPage = () => {
             <p className={styles.blankLine}>&nbsp;</p>
           </div>
           <div className={styles.choices}>
-            {isPlayerTurn && (
-              <div>
-                <div className={styles.choice1}>
-                  <img
-                    className={styles.naturePaperTexture1}
-                    alt=""
-                    src="/src/MainPageComponents/images/nature-paper-texture.png"
-                  />
-                  <Button
-                    bg="transparent"
-                    className={styles.loremIpsumDolor}
-                    width="100%"
-                    height="100%"
-                  >
-                    {options[0]}
-                  </Button>
-                </div>
-                <div className={styles.choice2}>
-                  <img
-                    className={styles.naturePaperTexture1}
-                    alt=""
-                    src="/src/MainPageComponents/images/nature-paper-texture.png"
-                  />
-                  <Button
-                    bg="transparent"
-                    className={styles.loremIpsumDolor}
-                    width="100%"
-                    height="100%"
-                  >
-                    {options[1]}
-                  </Button>
-                </div>
-                <div className={styles.choice3}>
-                  <img
-                    className={styles.naturePaperTexture1}
-                    alt=""
-                    src="/src/MainPageComponents/images/nature-paper-texture.png"
-                  />
-                  <Button
-                    bg="transparent"
-                    className={styles.loremIpsumDolor}
-                    width="100%"
-                    height="100%"
-                  >
-                    {options[2]}
-                  </Button>
-                </div>
-                <div className={styles.choice4}>
-                  <img
-                    className={styles.naturePaperTexture1}
-                    alt=""
-                    src="/src/MainPageComponents/images/nature-paper-texture.png"
-                  />
-                  <Button
-                    bg="transparent"
-                    className={styles.loremIpsumDolor}
-                    width="100%"
-                    height="100%"
-                  >
-                    {options[3]}
-                  </Button>
-                </div>
-              </div>
+            {true ? (
+              <SimpleGrid>
+                {options.map((option, index) => {
+                  return (
+                    <div className={styles["choice" + (index + 1)]}>
+                      <img
+                        className={styles.naturePaperTexture1}
+                        alt=""
+                        src="/src/MainPageComponents/images/nature-paper-texture.png"
+                      />
+                      <Button
+                        bg="transparent"
+                        className={styles.loremIpsumDolor}
+                        width="100%"
+                        height="100%"
+                      >
+                        {option}
+                      </Button>
+                    </div>
+                  );
+                })}
+              </SimpleGrid>
+            ) : (
+              <p style={{ margin: "auto" }}>Waiting for someone's turn...</p>
             )}
-            {!isPlayerTurn && <Box>Waiting for someone's turn...</Box>}
           </div>
         </HStack>
       </VStack>
