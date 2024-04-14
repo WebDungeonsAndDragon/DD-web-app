@@ -7,18 +7,28 @@ import { socket } from "./utils/socketClient";
 import AppNavigator from "./navigation/AppNavigator";
 
 function App() {
-  useEffect(() => {
-    socket.connect();
+    // const reducers = combineReducers();
+    const [isPlayerTurn, setIsPlayerTurn] = useState();
+    const [prompt, setPrompt] = useState("");
+    const [options, setOptions] = useState(["", "", "", ""]);
+    const [roomId, setRoomId] = useState("12");
 
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
-  return (
-    <ChakraProvider>
-      <AppNavigator />
-    </ChakraProvider>
-  );
+    // function that is run when the webpage loads
+    useEffect(() => {
+        socket.connect();
+
+        return () => {
+            socket.disconnect();
+        };
+    }, []);
+
+    // const store = configureStore(reducers);
+
+    return (
+        <ChakraProvider>
+            <AppNavigator />
+        </ChakraProvider>
+    );
 }
 
 export default App;

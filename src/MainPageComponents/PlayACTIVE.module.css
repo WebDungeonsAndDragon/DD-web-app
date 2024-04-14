@@ -1,0 +1,417 @@
+.image17Icon,
+.pastelYellowConcreteBackgro {
+  position: absolute;
+  top: 23px;
+  left: 57px;
+  width: 1547px;
+  height: 1031px;
+  object-fit: cover;
+}
+.pastelYellowConcreteBackgro {
+  top: 0;
+  left: 0;
+  width: 1611px;
+  height: 1078px;
+}
+.backgroundChild {
+  position: absolute;
+  top: 59px;
+  left: 81px;
+  background-color: tan;
+  width: 1514px;
+  height: 982px;
+  mix-blend-mode: multiply;
+}
+.background,
+.playStatsChild {
+  position: absolute;
+  top: -59px;
+  left: -81px;
+  width: 1611px;
+  height: 1078px;
+}
+.playStatsChild {
+  top: 79px;
+  left: 752px;
+  width: 0;
+  height: 903px;
+  object-fit: contain;
+}
+.bannerIcon,
+.topChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.topChild {
+  width: 1104px;
+  height: 79px;
+}
+.bannerIcon {
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.span {
+  font-weight: 500;
+}
+.yourTurnTxtContainer {
+  width: 100%;
+  font-size: xxx-large;
+  text-align: center;
+}
+.yourTurn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: brown;
+  /* text-shadow: 2px 0 0#000, 0 2px 0#000, -2px 0 0#000, 0-2px 0#000; */
+}
+.div,
+.top,
+.yourTurn {
+  position: absolute;
+}
+.div {
+  top: 5px;
+  left: 841.3px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 81.1px;
+}
+.top {
+  top: 0;
+  left: 204px;
+  width: 1104px;
+  height: 79px;
+  font-size: var(--font-size-29xl);
+  color: goldenrod;
+}
+.hourglassFullIcon,
+.playStatsItem {
+  position: absolute;
+  top: 9px;
+  left: 976px;
+  width: 62px;
+  height: 62px;
+}
+.playStatsItem {
+  top: 0;
+  left: 45px;
+  width: 95px;
+  height: 100px;
+  object-fit: contain;
+}
+.statsTabChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: brown;
+  width: 102px;
+  height: 48px;
+}
+.stats {
+  position: absolute;
+  top: 2px;
+  left: 12px;
+}
+.detailsTabChild,
+.statsTab {
+  position: absolute;
+  top: 613px;
+  left: 817px;
+  width: 102px;
+  height: 48px;
+}
+.detailsTabChild {
+  top: 0;
+  left: 0;
+  background-color: maroon;
+  width: 151px;
+}
+.details {
+  position: absolute;
+  top: 2px;
+  left: 21px;
+  display: inline-block;
+  width: 109px;
+  height: 38.4px;
+}
+.detailsTab,
+.roomInfoTabChild {
+  position: absolute;
+  top: 613px;
+  left: 939px;
+  width: 151px;
+  height: 48px;
+}
+.roomInfoTabChild {
+  top: 0;
+  left: 0;
+  background-color: maroon;
+  width: 180px;
+}
+.roomInfo {
+  position: absolute;
+  top: 2px;
+  left: 11.5px;
+  display: inline-block;
+  width: 157px;
+}
+.roomInfoTab {
+  position: absolute;
+  top: 613px;
+  left: 1110px;
+  width: 180px;
+  height: 48px;
+}
+.informationChild {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-color: brown;
+  width: 756px;
+  height: 321px;
+  mix-blend-mode: normal;
+}
+.informationItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+}
+.informationChild1,
+.informationInner,
+.vectorIcon {
+  position: absolute;
+  top: 268px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.informationChild1,
+.vectorIcon {
+  top: 0;
+  left: 701px;
+}
+.informationChild1 {
+  top: 268px;
+}
+.cleric,
+.shreya {
+  position: absolute;
+  top: 20px;
+  left: 65px;
+  color: goldenrod;
+  text-shadow: 1px 0 0#5a0707, 0 1px 0#5a0707, -1px 0 0#5a0707, 0-1px 0#5a0707;
+}
+.cleric {
+  left: 269px;
+}
+.div1,
+.health {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.div1 {
+  top: 11px;
+  left: 569px;
+  font-size: var(--font-size-5xl);
+  text-align: right;
+}
+.healthBarChild,
+.healthBarItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: tan;
+  width: 632px;
+  height: 13px;
+}
+.healthBarItem {
+  background-color: maroon;
+  width: 432px;
+}
+.healthBar,
+.healthStat {
+  position: absolute;
+  width: 632px;
+}
+.healthBar {
+  top: 44px;
+  left: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 13px;
+}
+.healthStat {
+  top: 84px;
+  left: 65px;
+  height: 57px;
+}
+.rectangleDiv {
+  top: 0;
+  left: 0;
+  background-color: maroon;
+  width: 592px;
+  height: 13px;
+}
+.charStat,
+.div3,
+.rectangleDiv {
+  position: absolute;
+}
+.charStat {
+  top: 164px;
+  left: 65px;
+  width: 632px;
+  height: 57px;
+}
+.div3 {
+  top: 11px;
+  left: 566px;
+  font-size: var(--font-size-5xl);
+  text-align: right;
+}
+.healthBarChild2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: maroon;
+  width: 368px;
+  height: 13px;
+}
+.information,
+.intelStat {
+  position: absolute;
+  top: 241px;
+  left: 65px;
+  width: 632px;
+  height: 57px;
+}
+.information {
+  top: 658px;
+  left: 753px;
+  filter: drop-shadow(0-4px 4px rgba(0, 0, 0, 0.25));
+  width: 761px;
+  height: 328px;
+  text-align: left;
+  color: gray;
+}
+.naturePaperTexture1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 9px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.loremIpsumDolor {
+  position: absolute;
+  height: 84.58%;
+  width: 88.77%;
+  /* top: 7.96%;
+  left: 5.26%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.choice1,
+.choice2,
+.choice3,
+.choice4,
+.choices {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 285px;
+  height: 201px;
+  align-content: center;
+  justify-content: center;
+}
+.choice2,
+.choice3,
+.choice4,
+.choices {
+  left: 328px;
+}
+.choice3,
+.choice4,
+.choices {
+  top: 281px;
+  left: 1px;
+}
+.choice4,
+.choices {
+  left: 328px;
+}
+.choices {
+  top: 100px;
+  left: 817px;
+  width: 613px;
+  height: 482px;
+  font-size: var(--font-size-base);
+  color: midnightblue;
+}
+.blankLine {
+  margin: 0;
+}
+.loremIpsumDolorContainer {
+  position: absolute;
+  top: 138px;
+  left: 82px;
+  color: black;
+  text-align: left;
+  display: inline-block;
+  width: 613px;
+  height: 744px;
+}
+.scrollChild {
+  top: 0;
+  left: 0;
+  background-color: gainsboro;
+  height: 802px;
+}
+.scroll,
+.scrollChild,
+.scrollItem {
+  position: absolute;
+  width: 20px;
+}
+.scrollItem {
+  top: 247px;
+  left: 0;
+  background-color: dimgray;
+  height: 76px;
+}
+.scroll {
+  top: 100px;
+  left: 715px;
+  height: 802px;
+  opacity: 0.5;
+}
+.playStats {
+  width: 100%;
+  position: relative;
+  background-color: white;
+  height: 982px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-13xl);
+  color: goldenrod;
+  font-family: var(--font-alegreya-sc);
+}
