@@ -99,6 +99,7 @@ const MainPage = () => {
                         className={styles.loremIpsumDolor}
                         width="100%"
                         height="100%"
+                        onClick={() => onNextTurn(option, roomId)}
                       >
                         {option}
                       </Button>
