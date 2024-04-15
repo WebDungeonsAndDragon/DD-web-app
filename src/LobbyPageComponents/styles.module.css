@@ -1,0 +1,8 @@
+.lobby {
+  background-image: url('src/LobbyPageComponents/images/Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
