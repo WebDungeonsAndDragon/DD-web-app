@@ -31,6 +31,10 @@ const onLeaveGame = (playerId, roomId) => {
   socket.emit("leaveGame", { playerThatLeft: playerId, roomId: roomId });
 };
 
+const onSelectRole = (role, roomId) => {
+  socket.emit("select-role", { role: role, roomId: roomId });
+};
+
 // socket should emit join-room
 const onEndGame = (endGameReason, roomId) => {
   socket.emit("end-game", { endGameReason: endGameReason, roomId: roomId });
@@ -81,4 +85,5 @@ export {
   onLeaveGame,
   onEndGame,
   createSuccessListeners,
+  onSelectRole,
 };

@@ -12,10 +12,6 @@ const AppNavigator = (props) => {
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/landing",
       element: <LandingPage />,
     },
     {

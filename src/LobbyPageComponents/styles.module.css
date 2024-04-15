@@ -1,8 +1,33 @@
 .lobby {
-  background-image: url('src/LobbyPageComponents/images/Background.png');
-  background-size: cover;
+  background-image: url("src/LobbyPageComponents/images/Background.png");
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  color: "#750909" !important;
 }
 
+.background {
+  background-image: url("src/LobbyPageComponents/images/FurtherBackground.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  width: 100%;
+}
 
+.title {
+  font-family: "MedievalSharp", cursive;
+  font-style: normal;
+  font-weight: 500;
+  /* identical to box height */
+  text-decoration-line: underline;
+
+  color: #750909;
+  font-size: 2rem;
+}
+
+.box {
+  box-sizing: border-box;
+
+  background: #903131;
+  border: 2px solid #000000;
+}

@@ -59,22 +59,14 @@
 .span {
   font-weight: 500;
 }
-.yourTurnTxtContainer {
-  width: 100%;
-  font-size: xxx-large;
-  text-align: center;
-}
 .yourTurn {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #903131;
-  border: #000 solid 3px;
 
   /* text-shadow: 2px 0 0#000, 0 2px 0#000, -2px 0 0#000, 0-2px 0#000; */
 }
 .div,
-.top,
 .yourTurn {
   position: absolute;
 }
@@ -89,11 +81,13 @@
 }
 .top {
   top: 0;
-  left: 204px;
-  width: 1104px;
-  height: 79px;
+  width: 80%;
   font-size: var(--font-size-29xl);
   color: goldenrod;
+  background-color: #903131;
+  border: #000 solid 3px;
+  font-size: xxx-large;
+  text-align: center;
 }
 .hourglassFullIcon,
 .playStatsItem {
@@ -323,11 +317,6 @@
   object-fit: cover;
 }
 .loremIpsumDolor {
-  position: absolute;
-  height: 84.58%;
-  width: 88.77%;
-  /* top: 7.96%;
-  left: 5.26%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,44 +349,19 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
 }
-.choice2,
-.choice3,
-.choice4,
-.choices {
-  left: 328px;
-}
-.choice3,
-.choice4,
-.choices {
-  top: 281px;
-  left: 1px;
-}
-.choice4,
-.choices {
-  left: 328px;
-}
 
-.choices {
-  position: absolute;
-  top: 100px;
-  left: 817px;
-  width: 613px;
-  height: 482px;
-  font-size: var(--font-size-base);
-  color: midnightblue;
-}
 .blankLine {
   margin: 0;
+  font-size: large;
 }
 .loremIpsumDolorContainer {
-  position: absolute;
-  top: 138px;
-  left: 82px;
+  max-width: 50%;
+
+  scroll-behavior: smooth;
+  align-self: baseline;
   color: black;
   text-align: left;
   display: inline-block;
-  width: 613px;
-  height: 744px;
 }
 .scrollChild {
   top: 0;
@@ -447,4 +411,21 @@
 
   border: 2px solid #000000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hoverableCard {
+  transition: transform 0.5s;
+
+  background: linear-gradient(
+      0deg,
+      rgba(104, 99, 91, 0.18),
+      rgba(104, 99, 91, 0.18)
+    ),
+    url("/src/MainPageComponents/images/nature-paper-texture.png");
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+
+.hoverableCard:hover {
+  transform: translateY(-0.5rem);
 }
