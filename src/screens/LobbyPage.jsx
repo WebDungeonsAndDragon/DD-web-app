@@ -12,6 +12,7 @@ import {
   Image,
   Stack,
   SimpleGrid,
+  Link,
 } from '@chakra-ui/react';import { socket } from "../utils/socketClient";
 import { createSuccessListeners, onNextTurn } from "../utils/functions";
 import { startGame } from "../store/actions/gameAction";
@@ -144,11 +145,11 @@ const LobbyPage = () => {
 
       {/* Start Button */}
       <Flex justifyContent="flex-end">
-        <Button colorScheme="red" href="/MainPage" size="lg" onClick={() => {
-          startGame(roomId);
-        }}>
-          Start
-        </Button>
+        <Link href="/main">
+          <Button colorScheme="red" size="lg" onClick={() => startGame(roomId)}>
+            Start
+          </Button>
+        </Link>
       </Flex>
     </Box>
   );
