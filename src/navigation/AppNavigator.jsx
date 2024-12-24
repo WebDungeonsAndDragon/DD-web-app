@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import LandingPage from "../screens/LandingPage";
 import LobbyPage from "../screens/LobbyPage";
@@ -9,7 +13,7 @@ import WinPage from "../screens/WinPage";
 import Home from "../screens/Home";
 
 const AppNavigator = (props) => {
-  const routes = createBrowserRouter([
+  const routes = createHashRouter([
     {
       path: "/",
       element: <LandingPage />,
